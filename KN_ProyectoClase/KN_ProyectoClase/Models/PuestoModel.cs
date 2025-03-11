@@ -5,9 +5,10 @@ using System.Web;
 
 namespace KN_ProyectoClase.Models
 {
-    public class PersonasModel
+    public class PuestoModel
     {
-        public string Identificacion { get; set; }
+        public long Id { get; set; }
         public string Nombre { get; set; }
+        public string Descripcion { get; set; }
     }
 }

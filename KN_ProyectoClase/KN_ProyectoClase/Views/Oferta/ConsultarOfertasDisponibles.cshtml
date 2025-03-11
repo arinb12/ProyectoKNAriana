@@ -1,0 +1,56 @@
+﻿@model List<KN_ProyectoClase.BaseDatos.ConsultarOfertas_Result>
+@{
+    ViewBag.Title = "ConsultarOfertas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Ofertas Disponibles</h6>
+        </div>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Cantidad</th>
+                    <th>Salario</th>
+                    <th>Horario</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    var disponible = item.Disponible ? "Activo" : "Inactivo";
+
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Nombre</td>
+                        <td>@item.Descripcion</td>
+                        <td>@item.Cantidad</td>
+                        <td>$ @item.Salario.ToString("N2")</td>
+                        <td>@item.Horario</td>
+                        <td>@disponible</td>
+
+                        @if (Session["IdPerfilUsuario"] != null)
+                        {
+                            <td><input type="button" class="btn btn-outline-primary" value="Ver Detalle" /></td>
+                        }
+                        else
+                        {
+                            <td><input type="button" class="btn btn-outline-primary" value="Ver Detalle" style ="cursor:not-allowed"/></td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
