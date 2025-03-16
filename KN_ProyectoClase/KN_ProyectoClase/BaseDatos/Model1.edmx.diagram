@@ -15,6 +15,7 @@
         <AssociationConnector Association="KN_DBModel.FK_Usuario_Perfil" ManuallyRouted="false" />
         <AssociationConnector Association="KN_DBModel.FK_UsuariosOferta_Usuario" ManuallyRouted="false" />
         <AssociationConnector Association="KN_DBModel.FK_UsuariosOferta_UsuariosOferta" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="KN_DBModel.Error" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

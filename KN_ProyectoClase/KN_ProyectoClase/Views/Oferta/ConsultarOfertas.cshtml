@@ -7,16 +7,13 @@
 
 <div class="container-fluid">
 
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Mantenimiento de Ofertas</h6>
-        </div>
+            <h5 class="m-0 font-weight-bold text-primary">Mantenimiento de Ofertas</h5>
 
         <div class="Margen">
-        <a class="btn btn-primary" href="@Url.Action("AgregarOferta","Oferta")"> + Agregar</a>
+            <a class="btn btn-primary" href="@Url.Action("AgregarOferta","Oferta")"> + Agregar</a>
         </div>
 
-        <table class="table table-bordered table-hover">
+        <table id="example" class="table table-bordered table-hover">
             <thead>
                 <tr>
                     <th>#</th>
@@ -46,7 +43,19 @@
                 }
             </tbody>
         </table>
-    </div>
 
 </div>
 
+
+<script src="~/Template/js/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var table = new DataTable('#example', {
+            language: {
+                url: '//cdn.datatables.net/plug-ins/2.2.2/i18n/es-ES.json',
+            },
+        });
+    });
+
+</script>
